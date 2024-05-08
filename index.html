@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="index.css">
+    <script  type = "module"  src = "https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" ></script> 
+<script  nomodule  src = "https://unpkg .com/ionicons@7.1.0/dist/ionicons/ionicons.js" > </script>
+    <link rel="shortcut icon" href="img/faviconvh.png" type="image/x-icon">
+    <!---colocamos o link da parte de instalação do site IONICONS, para conseguir colocar os icons-->
+</head>
+<body>
+    <section>
+        <div class="form-box">
+            <div class="form-value">
+                <form action="" method="post"> <!--- method post é frequentemente usado para enviar dados do cliente para o servidor, de maneira mais segura e discreta do que o method get-->
+                    <h2>Login</h2>
+                    <div class="inputbox">
+                        <ion-icon name="mail-outline"></ion-icon><input type="email" name="email" id="iemail" required maxlength="30" autocomplete="email">
+                        <label for="ilogin">Email</label>
+                    </div>
+                    <div class="inputbox"><ion-icon name="lock-closed-outline"></ion-icon><input type="password" name="senha" id="isenha" required "> <label for="isenha">Password</label>   
+                    </div>
+                    <div class="forget">
+                        <label><input type="checkbox">Remember Me</label> <a href="#">Forgot Password</a><!---label representa uma legenda para um item em uma interface do usuario. ali em cima, o label email foi para o id login. aqui, a label remember me foi para o input checkbox-->
+                    </div>
+                    <div>
+                        <button><strong>login</strong></button> <!---aq ele n colocou input type button, foi direto. n sei pq, mas qnd fui config em css, n tava conseguindo configurar qnd tinha colocado input type button, voltei e troquei por button como ele fez e consegui-->
+                    </div>
+                    <div class="register">
+                        <p>Don't have an account? <a href="#">Sign Up</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

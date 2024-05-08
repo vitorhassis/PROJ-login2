@@ -1,0 +1,171 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+section {
+    display: flex;
+    /*faz com que a div form-box se torne um container, a partir dai podemos manipular todos os elementos filhos desse flex container com propriedades novas, como o align-items e justify-content*/
+    justify-content: center;
+    /*alinha as divs internas horizontalmente*/
+    align-items: center;
+    /*divs internas centralizadas verticalmente*/
+    min-height: 100vh;
+    width: 100vw;
+    background: url("img/background.jpg") no-repeat;
+    
+    background-position: center;
+    /*posicao central da imagem*/
+    background-size: cover;
+    /*cover eh para a img cobrir todo container, msm se precisar esticar a img*/
+}
+
+.form-box {
+    position: relative;
+    /*fará com que ele seja ajustado fora de sua posição normal, outros conteudos nao serao ajustados para caber em qualquer coluna deixada pelo elemento*/
+    width: 400px;
+    height: 450px;
+    background: transparent;
+    border: none;
+    border-radius: 20px;
+    backdrop-filter:;
+    backdrop-filter: blur(10px) brightness(75%);
+    display: flex;
+    /*faz com que a div form-box se torne um container, a partir dai podemos manipular todos os elementos filhos desse flex container com propriedades novas, como o align-items e justify-content*/
+    justify-content: center;
+    /*alinha as divs internas horizontalmente*/
+    align-items: center;
+    /*divs internas centralizadas verticalmente*/
+    
+
+}
+
+h2 {
+    font-size: 2em;
+    color: #fff;
+    text-align: center;
+}
+
+.inputbox {
+    position: relative;
+    /*fará com que ele seja ajustado fora de sua posição normal, outros conteudos nao serao ajustados para caber em qualquer coluna deixada pelo elemento*/
+    margin: 30px 0;
+    width: 310px;
+    border-bottom: 2px solid #fff;
+    /*basicamente a linha*/
+}
+
+.inputbox label {
+    position: absolute;
+    /*como nesse caso, o inputbox tem um pai, o form-box, e ele está definido com uma position diferente de static (relative), ao adicionarmos um position absolute no filho, este elemento filho terá o elemento pai como referencia para ser posicionado. Caso o pai, estivesse um position static, ou o elemento nao tem um pai, ele será posicionado a partir do canto esquerdo superior do documento, podendo até mesmo sobrepor a eles.*/
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    /*esse top left e transform está nesses valores para o label ficar nesta posição, meio flutuando pa*/
+    color: #fff;
+    font-size: 1em;
+    pointer-events: none;
+    /*elemento reage ou não a eventos de ponteiro*/
+    transition: 0.5s;
+    /*um efeito de transição para o label aparecer*/
+}
+
+input:focus~label,
+input:valid~label {
+    top: -5px;
+}
+
+.inputbox input {
+    /*configs do conteudo doq vc for preencher nos espaços, no caso email e senha. tamanho deles, padding, etc*/
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    /*sem contorno*/
+    font-size: 1em;
+    padding: 0 25px 0 5px;
+    color: white;
+}
+
+.inputbox ion-icon {
+    /*configs do iconezinho, jogamos ele pra direita. position absolute pq ele tem um pai diferente de static, portanto, terá suas dimensoes de redirecionamento baseado no container pai dele*/
+    position: absolute;
+    right: 8px;
+    color: #fff;
+    font-size: 1.3em;
+    top: 20px;
+    /*posicionando a altura dele*/
+}
+
+.forget {
+    margin: -10px 0 17px;
+    font-size: 0.9em;
+    color: white;
+    display: flex;
+    /*faz com que a div forget se torne um container, a partir dai podemos manipular todos os elementos filhos desse flex container com propriedades novas, como o align-items e justify-content*/
+    justify-content: space-between;
+    /*o flex-start faz os elementos ficarem juntos na esquerda. o flex-end faz eles ficarem junto no final da linha, ou seja, na direita. o center faz os elementos ficarem no centro, o space-between faz tipo, se tiverem dois elementos, um fica na ponta da esquerda o outro na ponta da direita. o space-around e space-evenly faz os elementos se dividirem igualmente, com o mesmo espaço entre eles, na linha. tem diferenca mas é bastante parecido*/
+
+}
+
+.forget label input {
+    margin-right: 3px;
+    /*margin a direita do "remember me", o label do input checkbox*/
+
+}
+
+.forget a {
+    text-decoration: none;
+    color: white;
+}
+
+.forget a:hover {
+    /*dar o efeito de underline qnd passar o mouse*/
+    text-decoration: underline;
+}
+
+button {
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    background-color: white;
+    border: none;
+    /*na outra tela de login, aquele contorno preto era a borda, se vc colocar none sai. da a impressao que eh shadow mas n eh*/
+    outline: none;
+    /*sem contorno*/
+    cursor: pointer;
+    /*vai permitir o clique qnd vc passar o leitor do mouse sobre o button*/
+    font-size: 1em;
+}
+
+.register {
+    /*config do .register, ou seja, do "dont have an account?"*/
+    font-size: 0.9em;
+    color: white;
+    text-align: center;
+    margin: 25px 0 10px;
+}
+
+.register p a {
+    /*"Sign Up", teve q separar pq aq eh texto linkado.*/
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+}
+
+.register p a:hover {
+    /*qnd passar o cursor do mouse, ficar sublinhado*/
+    text-decoration: underline;
+}
+
+@media screen and (max-width:480px) {
+    .form-box {
+        width: 100%;
+        border-radius: 0px;
+    }
+}
