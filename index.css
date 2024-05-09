@@ -33,6 +33,8 @@ section {
     border: none;
     border-radius: 20px;
     
+    -webkit-backdrop-filter: blur(10px) brightness(75%);
+    /*tem dois dessa propriedade, porque essa de cima é para funcionar corretamente no safari (IOS). O de baixo, sem "-webkit-" é para dispositivos em geral, sem ser sistema IOS*/
     backdrop-filter: blur(10px) brightness(75%);
     display: flex;
     /*faz com que a div form-box se torne um container, a partir dai podemos manipular todos os elementos filhos desse flex container com propriedades novas, como o align-items e justify-content*/
