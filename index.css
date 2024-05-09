@@ -32,7 +32,7 @@ section {
     background: transparent;
     border: none;
     border-radius: 20px;
-    backdrop-filter:;
+    
     backdrop-filter: blur(10px) brightness(75%);
     display: flex;
     /*faz com que a div form-box se torne um container, a partir dai podemos manipular todos os elementos filhos desse flex container com propriedades novas, como o align-items e justify-content*/
@@ -55,7 +55,7 @@ h2 {
     /*fará com que ele seja ajustado fora de sua posição normal, outros conteudos nao serao ajustados para caber em qualquer coluna deixada pelo elemento*/
     margin: 30px 0;
     width: 310px;
-    border-bottom: 2px solid #fff;
+    border-bottom: 2px solid #ffffff;
     /*basicamente a linha*/
 }
 
@@ -66,7 +66,7 @@ h2 {
     left: 5px;
     transform: translateY(-50%);
     /*esse top left e transform está nesses valores para o label ficar nesta posição, meio flutuando pa*/
-    color: #fff;
+    color: #ffffff;
     font-size: 1em;
     pointer-events: none;
     /*elemento reage ou não a eventos de ponteiro*/
@@ -89,7 +89,7 @@ input:valid~label {
     /*sem contorno*/
     font-size: 1em;
     padding: 0 25px 0 5px;
-    color: white;
+    color: rgb(255, 255, 255);
 }
 
 .inputbox ion-icon {
@@ -105,7 +105,7 @@ input:valid~label {
 .forget {
     margin: -10px 0 17px;
     font-size: 0.9em;
-    color: white;
+    color: rgb(255, 255, 255);
     display: flex;
     /*faz com que a div forget se torne um container, a partir dai podemos manipular todos os elementos filhos desse flex container com propriedades novas, como o align-items e justify-content*/
     justify-content: space-between;
@@ -114,14 +114,14 @@ input:valid~label {
 }
 
 .forget label input {
-    margin-right: 3px;
+    margin-right: 7px;
     /*margin a direita do "remember me", o label do input checkbox*/
 
 }
 
 .forget a {
     text-decoration: none;
-    color: white;
+    color: rgb(255, 255, 255);
 }
 
 .forget a:hover {
@@ -133,7 +133,7 @@ button {
     width: 100%;
     height: 40px;
     border-radius: 40px;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     border: none;
     /*na outra tela de login, aquele contorno preto era a borda, se vc colocar none sai. da a impressao que eh shadow mas n eh*/
     outline: none;
@@ -146,7 +146,7 @@ button {
 .register {
     /*config do .register, ou seja, do "dont have an account?"*/
     font-size: 0.9em;
-    color: white;
+    color: rgb(255, 255, 255);
     text-align: center;
     margin: 25px 0 10px;
 }
@@ -165,7 +165,31 @@ button {
 
 @media screen and (max-width:480px) {
     .form-box {
-        width: 100%;
-        border-radius: 0px;
+        width: 70%;
+        border-radius: 30px;
     }
+
+    button {
+      width: 70%;
+      margin-left: 40px;
+    }
+
+    .forget {
+        font-size:13px;
+       margin-top: 20px;
+       
+        
+    }
+
+    .forget a {
+        margin-left: 5px;
+    }
+
+
+    .inputbox {
+        position: relative;
+        width: 60vw;
+        margin: auto;
+    }
+
 }
